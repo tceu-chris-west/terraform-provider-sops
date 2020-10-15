@@ -1,7 +1,7 @@
 image: golang:buster
 
 variables:
-  # Please edit to your GitLab project
+  # GitLab project
   REPO_NAME: gitlab.com/tceu-chriswest/terraform-provider-sops
 
 # The problem is that to be able to use go get, one needs to put
