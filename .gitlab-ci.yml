@@ -23,6 +23,7 @@ stages:
 compile:
   stage: build
   script:
+    - go mod vendor
     - make
 
 test:
