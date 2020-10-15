@@ -23,7 +23,8 @@ stages:
 compile:
   stage: build
   script:
-    - go mod vendor
+    # because otherwise there are weird dependency problems?
+    - rm vendor/modules.txt
     - make
 
 test:
@@ -34,6 +35,7 @@ test:
 release:
   stage: deploy
   script:
+    - rm vendor/modules.txt
     - make crossbuild
   artifacts:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
